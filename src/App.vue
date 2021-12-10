@@ -1,9 +1,10 @@
 <template>
   <h2>Contact List</h2>
   <ul>
-    <li v-for="friend in friends" :key="friend.id">
+    <!-- <li v-for="friend in friends" :key="friend.id">
       {{ friend.name }}
-    </li>
+    </li> -->
+    <friend-contact></friend-contact>
   </ul>
 </template>
 
