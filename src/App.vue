@@ -4,10 +4,13 @@
       <h1>Contact List</h1>
     </header>
     <ul>
-      <!-- <li v-for="friend in friends" :key="friend.id">
-      {{ friend.name }}
-    </li> -->
-      <friend-contact></friend-contact>
+      <friend-contact
+        v-for="friend in friends"
+        :key="friend.id"
+        :name="friend.name"
+        :phone-number="friend.phone"
+        :email-address="friend.email"
+      ></friend-contact>
     </ul>
   </section>
 </template>
