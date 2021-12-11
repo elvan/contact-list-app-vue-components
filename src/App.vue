@@ -10,6 +10,7 @@
         :name="friend.name"
         :phone-number="friend.phone"
         :email-address="friend.email"
+        :is-favorite="friend.isFavorite"
       ></friend-contact>
     </ul>
   </section>
@@ -25,6 +26,7 @@ export default {
           name: "Aaron",
           phone: "123-456-7890",
           email: "aaron@example.com",
+          isFavorite: "1",
         },
         {
           id: 2,
@@ -43,7 +45,6 @@ export default {
   },
 };
 </script>
-
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Jost&display=swap");
