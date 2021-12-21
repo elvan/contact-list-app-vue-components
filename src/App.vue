@@ -11,7 +11,7 @@
         :phone-number="friend.phone"
         :email-address="friend.email"
         :is-favorite="friend.isFavorite"
-      ></friend-contact>
+      />
     </ul>
   </section>
 </template>
@@ -26,7 +26,7 @@ export default {
           name: "Aaron",
           phone: "123-456-7890",
           email: "aaron@example.com",
-          isFavorite: "1",
+          isFavorite: true,
         },
         {
           id: 2,
