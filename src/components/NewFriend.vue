@@ -32,6 +32,15 @@ export default {
 
   methods: {
     submitData() {
+      if (
+        this.enteredName.trim() === "" ||
+        this.enteredPhone.trim() === "" ||
+        this.enteredEmail.trim() === ""
+      ) {
+        alert("Please enter valid data.");
+        return;
+      }
+
       this.$emit("add-contact", {
         name: this.enteredName,
         phone: this.enteredPhone,
