@@ -8,6 +8,7 @@
         name="Melvin Jenkins"
         phone-number="01234 78992"
         email-address="melvin@localhost.com"
+        is-favorite="1"
       ></friend-contact>
       <friend-contact
         name="Jessica Weber"
