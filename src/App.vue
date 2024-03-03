@@ -3,6 +3,7 @@
     <header>
       <h1>My Friends</h1>
     </header>
+    <new-friend @add-contact="addContact"></new-friend>
     <ul>
       <friend-contact
         v-for="friend in friends"
@@ -13,6 +14,7 @@
         :email-address="friend.email"
         :is-favorite="friend.isFavorite"
         @toggle-favorite="toggleFavoriteStatus"
+        @delete="deleteContact"
       ></friend-contact>
     </ul>
   </section>
@@ -44,6 +46,19 @@ export default {
     toggleFavoriteStatus(friendId) {
       const identifiedFriend = this.friends.find((friend) => friend.id === friendId);
       identifiedFriend.isFavorite = !identifiedFriend.isFavorite;
+    },
+    addContact(name, phone, email) {
+      const newFriendContact = {
+        id: new Date().toISOString(),
+        name: name,
+        phone: phone,
+        email: email,
+        isFavorite: false,
+      };
+      this.friends.push(newFriendContact);
+    },
+    deleteContact(friendId) {
+      this.friends = this.friends.filter((friend) => friend.id !== friendId);
     },
   },
 };
@@ -77,7 +92,8 @@ header {
   padding: 0;
   list-style: none;
 }
-#app li {
+#app li,
+#app form {
   width: 90%;
   max-width: 40rem;
   margin: 1rem auto;
@@ -106,5 +122,18 @@ header {
   border-color: #ec3169;
   background-color: #ec3169;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.26);
+}
+#app input {
+  padding: 0.15rem;
+  font: inherit;
+}
+#app label {
+  display: inline-block;
+  width: 7rem;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+#app form div {
+  margin: 1rem 0;
 }
 </style>
