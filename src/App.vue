@@ -28,12 +28,14 @@ export default {
           name: 'Melvin Jenkins',
           phone: '01234 5678 991',
           email: 'melvin@localhost.com',
+          isFavorite: true,
         },
         {
           id: 'jessica',
           name: 'Jessica Weber',
           phone: '09876 543 221',
           email: 'jessica@localhost.com',
+          isFavorite: true,
         },
       ],
     };
